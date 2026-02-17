@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dog Breed Identification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .navbar {
+            background: black;
+            color: white;
+            padding: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+        }
+
+        .container {
+            margin-top: 40px;
+        }
+
+        input[type="file"] {
+            margin: 20px;
+        }
+
+        .btn {
+            background: green;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: darkgreen;
+        }
+
+        img {
+            margin-top: 20px;
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/">About</a>
+    <a href="/">Contact</a>
+</div>
+
+<div class="container">
+    <h2>Dog Breed Identification</h2>
+
+    <form action="{{ url_for('output') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br>
+        <button type="submit" class="btn">Predict</button>
+    </form>
+</div>
+
+</body>
+</html>

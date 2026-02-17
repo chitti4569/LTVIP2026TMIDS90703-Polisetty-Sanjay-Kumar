@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.btn {
+    background: transparent;
+    color: gold;
+    border: 2px solid gold;
+    padding: 5px 15px;
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* BACKGROUND IMAGE */
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+        url("https://c8.alamy.com/comp/2B6NJ96/abstract-technology-background-concept-circle-circuit-digital-metal-red-on-hi-tech-future-design-2B6NJ96.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero span {
+    color: gold;
+}
+
+.content {
+    display: flex;
+    padding: 50px;
+    background: white;
+    color: black;
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    width: 50%;
+}
+
+.dog-grid img {
+    width: 100px;
+    margin: 10px;
+}
+
+.contact {
+    display: flex;
+    padding: 50px;
+    background: white;
+    color: black;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.form button {
+    background: gold;
+    border: none;
+    padding: 10px;
+}

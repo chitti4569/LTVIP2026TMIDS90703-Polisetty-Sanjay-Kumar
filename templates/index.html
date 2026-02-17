@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dog Breed Identification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #000;
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        .nav-links a:hover {
+            color: orange;
+        }
+
+        .inspect-btn {
+            border: 2px solid orange;
+            padding: 8px 18px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .inspect-btn:hover {
+            background: orange;
+            color: black;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+        }
+
+        .hero span {
+            color: orange;
+        }
+
+        .hero p {
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        /* Upload Box */
+        .upload-box {
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            padding: 8px;
+            background: white;
+            color: black;
+            border-radius: 5px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: orange;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: darkorange;
+        }
+
+        img {
+            margin-top: 20px;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+
+    <!-- Image Preview Script -->
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('preview');
+                output.src = reader.result;
+                output.style.display = "block";
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">DOG BREED.</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <a href="#" class="inspect-btn">Inspect</a>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Dog Breed <br> Identification<span>.</span></h1>
+    <p>Upload a dog image and identify its breed instantly</p>
+
+    <!-- Upload Form -->
+    <form action="{{ url_for('output') }}" method="POST" enctype="multipart/form-data">
+        <div class="upload-box">
+            <input type="file" name="file" accept="image/*" onchange="previewImage(event)" required>
+        </div>
+
+        <img id="preview" style="display:none;"/>
+
+        <br>
+        <button type="submit" class="btn">Predict</button>
+    </form>
+</div>
+
+</body>
+</html>

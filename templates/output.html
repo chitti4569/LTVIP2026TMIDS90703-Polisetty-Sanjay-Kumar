@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dog Breed Identification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 80px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: orange;
+        }
+
+        .inspect-btn {
+            border: 2px solid orange;
+            padding: 8px 18px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .inspect-btn:hover {
+            background: orange;
+            color: black;
+        }
+
+        .result {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .result h1 {
+            font-size: 55px;
+        }
+
+        .result span {
+            color: orange;
+        }
+
+        .back-btn {
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: orange;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: darkorange;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2>DOG BREED IDENTIFICATION</h2>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/">About</a>
+        <a href="/">Contact</a>
+    </div>
+
+    <a href="{{ url_for('predict') }}" class="inspect-btn">Inspect</a>
+</div>
+
+<div class="result">
+    <h1>
+        The Dog Breed is <br>
+        <span>{{ predict }}</span>
+    </h1>
+
+    <a href="{{ url_for('predict') }}">
+        <button class="back-btn">Predict Another</button>
+    </a>
+</div>
+
+</body>
+</html>
